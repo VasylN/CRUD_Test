@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS users;
+DROP SEQUENCE IF EXISTS global_se;
+
+CREATE SEQUENCE global_se START 10000;
+
+CREATE TABLE users(
+  userid INTEGER PRIMARY KEY DEFAULT nextval('global_se'),
+  firstname VARCHAR NOT NULL,
+  lastname VARCHAR NOT NULL,
+  dob DATE DEFAULT NULL,
+  email VARCHAR NOT NULL
+);
